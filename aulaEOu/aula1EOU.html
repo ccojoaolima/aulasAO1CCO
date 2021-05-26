@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a nota do aluno<input id="inputNota">
+    <br>
+    informe a frequencia do aluno <input id="inputFreq">
+    <br>
+    <button onclick="verificaSit()">Verificar Situaçao</button>
+</body>
+</html>
+<script>
+    /*
+    SE o aluno tiver nota >=6
+    SE o aluno tiver frequencia >=70
+    Mostrar "Parabéns aprovado!"
+    SE o aluno nao atender os requisitos 
+    Mostrar "Infelizmente reprovado"
+    
+    
+    */
+function verificaSit(){
+var nroNota = Number (inputNota.value);
+var nroFreq = Number (inputFreq.value);
+if (nroNota >=6 && nroFreq >=70){
+    alert ("Parabéns aprovado");
+    }
+ else {
+    alert ("Infelizmente reprovado.");
+}
+
+
+
+
+}
+
+
+
+
+</script>

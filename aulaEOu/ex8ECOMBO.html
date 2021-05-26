@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o tempo trabalhado pro pai <input id="inputTempoPai"> <br>
+    Informe qts. Kg as plantações renderam <input id="inputKgs"> <br>
+    Informe qts. dias faltou ao trabalho <input id="inputFaltas"> <br>
+    <button onclick="verMatch()">Deu match?</button>
+    <div id="msgFinal"></div>
+    
+</body>
+</html>
+
+<script>
+function verMatch(){
+if(inputTempoPai.value >= 5 && inputKgs.value >=300 && inputFaltas.value 
+<=5){
+    msgFinal.innerHTML = `Minha filha será sua! <br>
+    <img src="./exPaiImgs/noiva.jpg" alt="">`;
+} else {
+    msgFinal.innerHTML = `trabalhe por mais 2 anos! <br>
+    <img src="./exPaiImgs/bravo.png" alt="">`;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+</script>

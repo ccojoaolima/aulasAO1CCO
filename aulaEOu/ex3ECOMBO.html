@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a idade: <input  id="inputIdade"> <br>
+    Informe o peso: <input id="inputPeso">
+    <button onclick="verBrincar()">Pode brincar?</button>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<SCript>
+function verBrincar(){
+   
+if(inputIdade.value >15 && inputPeso.value <=100){
+    msgFinal.innerHTML = `Pode brincar!`;
+} else{
+    msgFinal.innerHTML = `Nao pode brincar!`;
+}
+
+
+
+}
+
+
+
+
+
+</SCript>

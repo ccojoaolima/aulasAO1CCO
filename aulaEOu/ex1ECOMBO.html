@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a bebida:
+    <select id="selectBebida" onchange="changeBebida()">
+        <option value="0">Nenhuma</option>
+        <option value="3">Agua</option>
+        <option value="5">Refri</option>
+        <option value="10">Cerveja</option>
+    </select>
+    Informe a Refeição:
+    <select id="selectRef" onchange="changeRef()">
+        <option value="7">Salada</option>
+        <option value="15">Feijoada</option>
+        <option value="20">Bife a Cavalo</option>
+        <option value="30">Peixe</option>
+    </select>
+    <br>
+    Informe o seu nome: <input id="inputNome"> 
+    <button onclick="calculaFull()">Calcular total a pagar</button> <br>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<script>
+
+function calculaFull(){
+nroBebida = Number (selectBebida.value);
+nroRef = Number(selectRef.value);
+valorFull = nroBebida + nroRef;
+
+msgFinal.innerHTML = `Olá ${inputNome.value} o seu almoço
+deu um total de R$ ${valorFull}`;
+
+
+
+
+}
+
+
+
+
+
+
+</script>

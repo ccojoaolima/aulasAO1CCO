@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o time que vc torce:
+    <select onchange="changeEquipe()" id="selectEquipe">
+    <option value="./escudos/spfc.jpg">São Paulo</option>
+    <option value="./escudos/sfc.jpg">Santos</option>
+    <option value="./escudos/sep.png">Palmeiras</option>
+    <option value="./escudos/sccp.jpg">Corinthians</option>
+    </select><br>
+    <button onclick="verEscudo()">Ver escudo</button>
+    <div id="msgFinal"></div>
+    <img src="" id="imgEscudo">
+</body>
+</html>
+<script>
+function verEscudo(){
+imgEscudo.src = selectEquipe.value;
+
+
+}
+
+
+</script>

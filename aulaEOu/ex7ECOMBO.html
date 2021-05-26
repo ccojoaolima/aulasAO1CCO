@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="changeCafe()" id="selectCafe">
+    <option value="ovos">Ovos</option>
+    <option value="leiteArroz">Leite de arroz</option>
+    <option value="Bacon">Bacon</option>
+</select>
+
+
+<select onchange="changeAlmoco()" id="selectAlmoco">
+    <option value="bife">Bife</option>
+    <option value="burgerSoja">Hamburger de soja</option>
+    <option value="frango">Frango grelhado</option>
+</select>
+
+<select onchange="changeJanta()" id="selectJanta">
+    <option value="picaSoja">Picanha de soja</option>
+    <option value="cupim">Cupim</option>
+    <option value="coracao">Coração</option>
+</select>
+
+<button onclick="verVegano()">Sou vegano?</button>
+</body>
+</html>
+<script>
+function verVegano(){
+if (selectCafe.value == "leiteArroz" && selectAlmoco.value =="burgerSoja" 
+&& selectJanta.value =="picaSoja" ){
+    alert("É vegano!");
+} else{
+    alert ("NÃO é vegano!");
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+</script>
