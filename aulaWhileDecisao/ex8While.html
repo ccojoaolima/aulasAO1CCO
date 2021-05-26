@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quantos em quantos dias o usuário faz musculação?
+    <input id="inputMusculacao"> <br>
+    <button onclick="exibaRotina()">Exibir rotina mensal</button>
+    <br>
+    <div id="msgFinal"></div>
+    <div id="msgFinal2"></div>
+</body>
+</html>
+<script>
+function exibaRotina(){
+var contador = 2
+msgFinal.innerHTML += `Dia 1 - Musculação `;
+
+while(contador<31 ){
+
+    if(contador%inputMusculacao.value == 0 ){
+        msgFinal2.innerHTML += `
+     Dia ${contador} - Musculaçao <br>
+    `;
+    ++contador;    
+
+    } else{
+        msgFinal2.innerHTML += `
+     Dia ${contador} - Comer e dormir <br>
+    `;
+    ++contador;    
+    
+ 
+    }
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

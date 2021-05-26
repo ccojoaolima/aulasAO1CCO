@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a frase: <input id="inputFrase"> <br>
+    <button onclick="filosofar()">Filosofar</button>  <br>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<script>
+function filosofar(){
+var contador = 0;
+
+if(inputFrase.value == ""){
+    alert("Mas qual é a frase?");
+} else{
+while (contador < 7){
+msgFinal.innerHTML += `${inputFrase.value} <br>`;
+++contador;
+}
+}
+
+}
+
+
+
+
+
+</script>

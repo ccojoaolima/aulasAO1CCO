@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="verNumeros()">Curto 3 e 5!</button> 
+    <br>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<script>
+function verNumeros(){
+var contador = 0;
+while (contador <101){
+    if (contador%5 == 0 && contador%3 ==0  ){
+        msgFinal.innerHTML +=`é penta! é tri! <br>`
+        contador++
+    } else if (contador%5 == 0){
+        msgFinal.innerHTML += `é penta! <br>`;
+    contador++   
+    } else if(contador%3 == 0){
+        msgFinal.innerHTML += ` é tri! <br>`;
+    contador++
+    } else{
+        msgFinal.innerHTML += `${contador} <br>`;
+    contador++
+    }
+    
+}
+}
+</script>

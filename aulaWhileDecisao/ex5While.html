@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual tabuada deseja ver? <input id="inputMul"> <br>
+    <button onclick="verPares()">Ver tabuada!</button> <br>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<script>
+function verPares(){
+var contador = 0;
+
+while (contador <11){
+msgFinal.innerHTML += `${inputMul.value} X ${contador} = ${inputMul.value * contador} <br>`;
+contador = contador + 1;
+
+}
+} 
+
+
+
+
+</script>
