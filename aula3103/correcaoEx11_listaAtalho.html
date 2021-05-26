@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Valor guardado no cofrinho R$ <span id="spanGrana">0</span></span> <br>
+    <span>Qtd. de depositos feitos: <b id="qtdDepositos">0</b></span>
+    <span>Qtd. de retiradas ffeitas: <b id="qtdRetiradas">0</b></span>
+    
+    <br>
+    Valor a ser depositado: <input id="inputDeposito">  <br>
+    <button onclick="depositar()"> Depositar</button> 
+    <button onclick="retirar()"> tirar a grana</button>
+</body>
+</html>
+<script>
+var cofrinho = 0;
+var qtdDepositosVar = 0;
+var qtdRetiradasVar = 0;
+
+function depositar(){
+    var valorDeposito = Number (inputDeposito.value);
+    cofrinho += valorDeposito;
+    spanGrana.innerHTML = cofrinho;
+    qtdDepositos.innerHTML = ++qtdDepositosVar;
+}
+function retirar(){
+    cofrinho  =0;
+    spanGrana.innerHTML = cofrinho;
+    qtdRetiradas.innerHTML = ++qtdRetiradasVar;
+}
+
+
+</script>

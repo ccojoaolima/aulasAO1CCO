@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o 1o termo da PG: <input id="inputPrimeiro"> <br>
+    Informe a razao: <input id="inputRazao">  <br>
+    Informe qual termo deseja ver <input id="inputDesejo"> <br>
+    <button onclick="calculaPG()">Calcualr PG</button>
+</body>
+</html>
+
+<script>
+function calculaPG(){
+    var primeiro_termo = Number(inputPrimeiro.value);
+    var razao = Number (inputRazao.value);
+    var termoSolicitado = Number (inputDesejo.value);
+// an = al . q^n-1
+//an = primeiro_termo . razao^termoSolicitado-1
+
+var an = primeiro_termo * (razao **(termoSolicitado -1));
+
+alert (` `);
+
+
+
+}
+
+
+
+
+
+</script>

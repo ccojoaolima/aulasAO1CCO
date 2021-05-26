@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="passagens08()">08 passagens</button>
+    <button onclick="passagens20()">20 passagens</button>
+    <button onclick="passagens50()">50 passagens</button>
+</body>
+</html>
+<script>
+
+function passagens08(){
+var qtdPassagens = 08;
+var valorPago = 32.45;
+var valorCheio = 35.20;
+var desconto = (1-(valorPago/valorCheio))*100;
+var passagensBonus = 4.40/(valorPago - valorCheio );
+
+alert (`Ao comprar ${qtdPassagens} passagens vc pagou ${desconto.toFixed(1)}% a menos
+é como se tivesse ganhado ${passagensBonus.toFixed(1)} passagens de bonus`);
+
+}
+function passagens20(){
+    var qtdPassagens =20;
+var valorPago = 78.65;
+var valorCheio = 88.00;
+var desconto = (1-(valorPago/valorCheio))*100;
+var passagensBonus = 4.40/(valorPago - valorCheio );
+alert (`Ao comprar ${qtdPassagens} passagens vc pagou ${desconto.toFixed(1)}% a menos
+é como se tivesse ganhado ${passagensBonus.toFixed(1)} passagens de bonus`);
+
+}
+function passagens50(){
+    var qtdPassagens = 50;
+var valorPago = 191.41;
+var valorCheio = 220.00;
+var desconto = (1-(valorPago/valorCheio))*100;
+var passagensBonus = 4.40/(valorPago - valorCheio );
+alert (`Ao comprar ${qtdPassagens} passagens vc pagou ${desconto.toFixed(1)}% a menos
+é como se tivesse ganhado ${passagensBonus.toFixed(1)} passagens de bonus`);
+}
+
+
+
+
+
+
+
+</script>
