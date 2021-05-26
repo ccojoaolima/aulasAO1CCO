@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do aluno <input id="inNomeAluno">
+    <br>
+    <button onclick="cadastrarAluno()">Cadastrar Aluno</button> <br>
+    <div id="divFinal"></div>
+</body>
+</html>
+<script>
+
+var listaAlunos =[];
+function cadastrarAluno(){
+listaAlunos.push(inNomeAluno.value);
+
+/*divFinal.innerHTML = ``;
+for(var contador = 0; contador < listaAlunos.length; contador++){
+divFinal.innerHTML += `${listaAlunos[contador]}  <br>`;*/
+
+
+divFinal.innerHTML = ``;
+/*tamanho da lista - 1 = ultima posiçao
+portanto o contador começara da ultima posicao e irá até o 0 (item inicial)
+Além disso o contador tem que diminuir pois é uma lista inversa*/
+for(var contador = (listaAlunos.length - 1); contador >= 0; contador--){
+divFinal.innerHTML += `${listaAlunos[contador]}  <br>`; 
+
+}
+}
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do local: <input id="inNomeLocal"> <br>
+    <button onclick="cadastraLocal()">Cadastrar local</button> <br>
+
+    Local pra onde Viajou: <input id="inNroViagem"> <br>
+    <button onclick="relembraViagem()">Relembrar Viagem</button> <br>
+
+    <div id="divExibeLocal"></div><br>
+
+</body>
+</html>
+<script>
+var listaLocal= [];
+function cadastraLocal(){
+listaLocal.push(inNomeLocal.value);
+}
+
+function relembraViagem(){
+    var viagemEscolhida = Number(inNroViagem.value);
+    if(viagemEscolhida > listaLocal.length){
+        divExibeLocal.innerHTML = `Voce nao fez uma ${viagemEscolhida} viagem!`;
+    } else{
+        divExibeLocal.innerHTML = listaLocal[viagemEscolhida - 1]; 
+    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+</script>

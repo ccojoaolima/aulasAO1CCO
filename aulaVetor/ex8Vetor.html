@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a nota: <input id="inNota"> 
+    <button onclick="cadastraNota()">Cadastrar nota</button> <br>
+    Nota Minima: <input id="inNotaMin"> <br>
+    Nota Maxima: <input id="inNotaMax"> 
+    <button onclick="reverNotas()">Rever as notas</button> <br>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+var listaNota = [];
+function cadastraNota(){
+var nota = Number(inNota.value);
+listaNota.push(nota);
+
+}
+
+function reverNotas(){
+    var notaMin = Number(inNotaMin.value);
+    var notaMax = Number(inNotaMax.value);
+
+/*criando o FOR do intervalo respeitando os criterios do intervalo
+estabelecido anteriormente*/
+    var listaNotaIntervalo = [];
+    for(var contador = 0;contador < listaNota.length; contador++){
+         var notaAtual = listaNota[contador];
+         if(notaAtual >= notaMin && notaAtual <= notaMax){
+            listaNotaIntervalo.push(notaAtual);
+         }
+    }
+//uma nova lista será criada apenas com as notas novas do intervalo
+
+//cada item dentro da lista do intervalo será add ao acumulador
+var acumulador = 0;
+for (var contador = 0; contador < listaNotaIntervalo.length; contador++){
+    acumulador += listaNotaIntervalo[contador];
+}
+
+/*Com o acumulador temos justamente o acumulado das notas do intervalo
+dividido pelo numero de items do intervalo teremos a média!*/
+var media = acumulador/listaNotaIntervalo.length;
+
+divMsg.innerHTML = `Foram cadastradas ${listaNotaIntervalo.length}
+notas que estão no intervalo de ${notaMin} e ${notaMax} e a média dessas
+notas é ${media}`;
+
+}
+
+</script>

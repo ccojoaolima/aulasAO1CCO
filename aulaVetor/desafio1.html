@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  id="inFruta"> 
+    <button onclick="addFruta()">Add Fruta</button> 
+    <button onclick="verFiscal()">Ver nota fiscal</button> <br>
+    <div id="divFruta"></div> <br>
+    <div id="divFiscal"></div>
+</body>
+</html>
+<script>
+    var qtdFrutas = 0;
+    var primeiraF = 0;
+    var ultimaF = "";
+    var listaFruta = [];
+function addFruta(){
+
+listaFruta.push(inFruta.value);
+divFruta.style.display = 'block';
+divFruta.innerHTML = ``;
+
+for(var contador = 0; contador < listaFruta.length; contador++ ){
+    divFruta.innerHTML += `${listaFruta[contador]} <br>`;
+}
+
+}
+function verFiscal(){
+    divFruta.style.display = 'none';
+    divFiscal.innerHTML += `Última fruta: ${listaFruta[listaFruta.length - 1]} <br>
+                           Primeira fruta: ${listaFruta[0]}<br>
+                           qtde frutas: ${listaFruta.length}<br>
+                           Valor total em R$ ${listaFruta.length*2.5} `;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

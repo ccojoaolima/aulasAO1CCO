@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome aluno <input id="inNomeAluno"> <br>
+     <br>
+    <button onclick="cadastrarAluno()">Cadastrar aluno</button> <br>
+    <div id="divFinal"></div>
+</body>
+</html>
+<script>
+var listaAlunos = ["Raffael", "Gustavo", "João Pedro"];
+
+function cadastrarAluno(){
+
+var aluno = inNomeAluno.value;
+var alunoExiste = false;
+
+for (contador = 0; contador < listaAlunos.length; contador++){
+    if(listaAlunos[contador] == aluno){
+        alunoExiste = true;
+    }
+}
+//redundancia abaixo
+if(alunoExiste == true){
+    alert("Aluno repetido hoje nao amigao!");
+} else{
+   listaAlunos.push(inNomeAluno.value);
+}
+
+divFinal.innerHTML =""; 
+for (contador = 0; contador < listaAlunos.length; contador++){
+    divFinal.innerHTML += `${listaAlunos[contador]} <br> `;
+}
+}
+
+
+
+
+</script>

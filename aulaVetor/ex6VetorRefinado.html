@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome aluno <input id="inNomeAluno"> <br>
+     <br>
+    <button onclick="cadastrarAluno()">Cadastrar aluno</button> <br>
+    <button onclick="pesquisaAluno()"> Pesquisar Aluno</button>
+    <div id="divFinal"></div>
+</body>
+</html>
+<script>
+var listaAlunos = ["Raffael", "Gustavo", "João Pedro"];
+
+function cadastrarAluno(){
+
+var aluno = inNomeAluno.value;
+/*aluno = aluno.toLocaleLowerCase(); mudaria permanentemente para minusculo*/
+var alunoExiste = false;
+/*Rodará a lista inteira em busca de aluno repetido*/
+for (contador = 0; contador < listaAlunos.length; contador++){
+/* retirar o case-sensitive -  nao muda permanentemente para minuscula*/   
+    if(listaAlunos[contador].toLowerCase() == aluno.toLowerCase()){
+        alunoExiste = true;
+    }
+}
+
+/*redundancia removida*/
+if(alunoExiste){
+    alert("Aluno repetido hoje nao amigao!");
+} else{
+   listaAlunos.push(inNomeAluno.value);
+}
+
+divFinal.innerHTML =""; 
+for (contador = 0; contador < listaAlunos.length; contador++){
+    divFinal.innerHTML += `${listaAlunos[contador]} <br> `;
+}
+}
+
+function pesquisaAluno(){
+    var aluno = inNomeAluno.value;
+    /*Percorre a lista
+    transforma temporariamente em maiusculo
+    compara o valor da posicao do contador com a lista*/
+    for(var contador = 0; contador < listaAlunos.length; contador++){
+        if(listaAlunos[contador].toUpperCase() == aluno.toUpperCase()){
+        alunoExisteLista = true;
+        }
+    }
+
+    if(alunoExisteLista){
+        alert(`Aluno ${aluno} existe na lista`);
+    }
+
+
+
+}
+
+
+
+
+</script>

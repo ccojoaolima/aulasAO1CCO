@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do filme: <input id="inFilme"> <br>
+    <button onclick="cadastraFilme()">Cadastrar</button> <br>
+    <div id="divFilmeFav"></div> <br>
+    <div id="div3roFilme"></div> <br>
+    <div id="divFilmesFull"></div>
+</body>
+</html>
+<script>
+var listaFilmes = [];
+
+function cadastraFilme(){
+var filme = inFilme.value;
+listaFilmes.push(filme);
+
+divFilmeFav.innerHTML = `Filme Fav: ${listaFilmes[0]}`;
+
+if (listaFilmes.length >= 3){
+    div3roFilme.innerHTML = listaFilmes[2];
+}
+
+divFilmesFull.innerHTML = `total de filmes cadastrados: ${listaFilmes.length}`;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
