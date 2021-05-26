@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="selectFilmes">
+    <option value="optVinga"> Vingadores</option>
+    <option value="optCivil">Guerra Civil</option>
+    <option value="optIron"> Homem de ferro</option>
+    
+    </select>
+    <button onclick="verNota()">Ver nota</button>
+</body>
+</html>
+
+<script>
+function verNota(){
+if(selectFilmes.value == "optVinga"){
+    alert (`Vingadores nota 8 IMDB`);   
+} 
+
+if(selectFilmes.value == "optCivil"){
+        alert (`Guerra Civil nota 9 IMDB`);
+
+    } else {
+        alert (`Homem de efrro nota 7`);
+    }
+
+
+
+
+
+}
+
+</script>

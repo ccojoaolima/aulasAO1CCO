@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="filmesMarvel">
+        <option value="optFerro">Homem de ferro</option>
+        <option value="optVinga">Vingadores/option>
+        <option value="optDr"> Doc. </option>
+    </select> <br>
+    <select id="filmesDC">
+        <option value="optMorcego">Batman vs Superman</option>
+        <option value="optSuicide">Suicide squad</option>
+        <option value="optLiga">Liga da justiça 2017</option>
+    </select> <button onclick="verNota()">Ver notas</button>
+    <br>
+    <div id="msgFilme"></div> <br>
+    <div id="msgFilmeDC"></div>
+</body>
+</html>
+<script>
+function verNota(){
+    if(filmesMarvel.value == "optFerro"){
+        msgFilme.innerHTML = `O filme Homem de Ferro tem uma nota de 7.5 no IMDB`;
+        if(filmesMarvel.value =="optVinga"){
+            msgFilme.innerHTML = `O filme Vingadores tem uma nota de 8.7 no IMDB`;
+            }
+    } else{
+        msgFilme.innerHTML = `O filme Dr. estranho tem uma nota de 8 no IMDB`
+    } 
+
+    if(filmesDC.value == "optMorcego"){
+        msgFilmeDC.innerHTML =`O filme Batman v. Superman tem uma nota de 4 no IMDB`;
+        if(filmesDC.value =="optSuicide"){
+            msgFilmeDC.innerHTML = `O filme Suicide Squad tem uma nota de 3 no IMDB`;
+
+        } else {
+            msgFilmeDC.innerHTML = `O filme Liga da Justiça (2017) tem uma nota de 3 no IMDB`;
+        }
+    }
+
+
+
+    
+}
+
+
+
+
+
+</script>
