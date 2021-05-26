@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frase <input onkeyup="transforma()" id="inputFrase"> <br>
+    primeira letra: <div id="divPrimeiraLetra"></div> <br>
+    ultima letra: <div id="divUltimaLetra"></div> <br>
+    O e-mail é valido: <div id="divArroba"></div> <br>
+    O e-mail começa com "A"?: <div id="divA"></div> <br>
+    O e-mail termina com domínio BR?: <div id="divBR"></div> <br>
+
+</body>
+</html>
+<script>
+function transforma(){
+var frase = inputFrase.value;
+divPrimeiraLetra.innerHTML = frase [0];
+divUltimaLetra.innerHTML = frase[frase.length -1];
+
+if(frase.indexOf("@") && frase.indexOf(".") > -1 ){
+    divArroba.innerHTML = " sim.";
+} else{
+    divArroba.innerHTML = " nao.";
+}
+
+if(frase.startsWith("a")) {
+    divA.innerHTML = "Sim";
+} else {
+divA.innerHTML = "Não";
+        }
+
+if(frase.endsWith(".com.br")) {
+    divBR.innerHTML = "Sim";
+} else {
+    divBR.innerHTML = "Não";
+}
+
+
+}
+
+
+
+</script>

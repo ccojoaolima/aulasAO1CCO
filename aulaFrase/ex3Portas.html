@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Posição do candidato A:
+    <select onchange="obterPosicaoA()" id="posicaoCandA">
+    <option value="0"> Não concorda</option>
+    <option value="1">Concorda</option>
+    </select>
+    Posição do candidato B:
+    <select onchange="obterPosicaoB()" id="posicaoCandB">
+    <option value="0">Não Concorda</option>
+    <option value="1">Concorda</option>
+    </select> <br>
+    <button onclick="deveInter()">Devo Interromper?</button>
+    <div id="msgFinal"></div>
+</body> 
+</html>
+<script>
+function deveInter(){
+if (posicaoCandA.value == 1 && posicaoCandB.value == 1){
+    msgFinal.innerHTML = `Debate acaba! Ambos concordam!`;
+} else if(posicaoCandA.value == 1 && posicaoCandB.value == 0){
+    msgFinal.innerHTML =`Debate continua! Cand. A concorda!`;
+
+}else if(posicaoCandA.value == 0 && posicaoCandB.value == 1){
+    msgFinal.innerHTML = `Debate continua! Cand. B concorda!`;
+
+} else {
+msgFinal.innerHTML = `Debate continua! Ambos Discordam!`;
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+</script>

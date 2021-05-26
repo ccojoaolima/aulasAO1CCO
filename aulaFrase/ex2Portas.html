@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    tipo de convidados A: <select onchange="onchangeA" id="convidadosA">
+    <option value="0"> Carnívoro </option>
+    <option value="1"> Vegano</option>
+    </select> <br>
+    tipo de convidados B:<select onchange="onchangeB" id="convidadosB">
+    <option value="0">Carnívoro</option>
+    <option value="1">Vegano</option>
+    </select>
+    <button onclick="verificaFesta()">Verificar</button> <br>
+    <div id="msgFinal"></div>
+</body>
+</html>
+<script>
+function verificaFesta(){
+if(convidadosA.value == 0 && convidadosB.value == 0){
+msgFinal.innerHTML = `Sirva o que quiser amigao!`;
+} else if(convidadosA.value ==1 && convidadosB.value == 1){
+    msgFinal.innerHTML = `Se quiser bombar vai de Veggie!`;
+} else{
+    msgFinal.innerHTML = `A festa tem uma possibilidade de fracasso de 
+    83%`;
+}
+
+
+
+
+
+}
+
+
+
+
+
+</script>
