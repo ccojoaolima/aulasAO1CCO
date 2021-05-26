@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome do atleta: <input id="inputNome"> <br>
+    Insira a idade do atleta: <input id="inputIdade"> <br>
+    <br>
+    Informe qual modalidade o atleta irá praticar: 
+    <select onchange="changeModalidade()" id="selectModalidade">
+        <option value="1">Correr</option>
+        <option value="2">Nadar</option>
+        <option value="3">Pedalar</option>
+    </select> <br>
+    <button onclick="btnPratica()">Praticar esporte</button> <br>
+    <div id="msgFinal"></div> <br>
+    <div id="msgImagens" style="width:300px; ">
+    
+    </div>
+   
+</body>
+</html>
+<script>
+var kmCorrida = 0;
+var kmNadar = 0;
+var kmPedala = 0;
+var kmFull = kmCorrida + kmNadar + kmPedala;
+  
+function btnPratica(){
+var valueNome = inputNome.value;
+var nroIdade = Number(inputIdade.value);
+//var kmFull = kmCorrida + kmNadar + kmPedala;
+
+//VALIDACAO
+if ( valueNome.length<3 || nroIdade<18||nroIdade>80) {
+    alert("Dados Inválidos!");    
+} 
+
+
+//CORRIDA
+else if(selectModalidade.value == 1){
+    kmCorrida += 1.5;
+    kmFull +=1.5;
+    var porcentagemKmCorrida = Number(kmCorrida/kmFull)*100;
+var porcentagemKmNadar = Number(kmNadar/kmFull)*100;
+var porcentagemKmPedalar = Number(kmPedala/kmFull)*100;
+
+
+} 
+
+
+//NATAÇAO
+else if(selectModalidade.value == 2){
+kmNadar += 1.5;
+kmFull += 1.5;
+var porcentagemKmCorrida = Number(kmCorrida/kmFull)*100;
+var porcentagemKmNadar = Number(kmNadar/kmFull)*100;
+var porcentagemKmPedalar = Number(kmPedala/kmFull)*100;
+} 
+
+//CICLISMO
+else {
+kmPedala += 1.5;
+kmFull += 1.5;
+var porcentagemKmCorrida = Number(kmCorrida/kmFull)*100;
+var porcentagemKmNadar = Number(kmNadar/kmFull)*100;
+var porcentagemKmPedalar = Number(kmPedala/kmFull)*100;
+
+}
+
+msgFinal.innerHTML =  ` Nome: <b>${valueNome}</b> - Idade:<b> ${nroIdade} </b>anos <br>
+Km correndo:<b>${kmCorrida} (${porcentagemKmCorrida.toFixed(2)}%) </b><br>
+Km nadando: <b>${kmNadar} (${porcentagemKmNadar.toFixed(2)}%)</b><br>
+Km pedalando:<b> ${kmPedala} (${porcentagemKmPedalar.toFixed(2)}%)<b><br>
+Km total:<b> ${kmFull}<b> ` ;
+
+msgImagens.innerHTML = `
+<img style="width: ${porcentagemKmCorrida}%; float:left" src= "https://image.flaticon.com/icons/png/128/103/103956.png"> 
+<img style="width: ${porcentagemKmNadar}%; float:left" src = "https://image.flaticon.com/icons/png/128/124/124212.png">
+<img style="width: ${porcentagemKmPedalar}%; float:left" src = "https://image0.flaticon.com/icons/png/128/94/94203.png">`
+
+
+}
+
+</script>
