@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cadastraProduto()">Cadastrar Produtos</button>
+    <button onclick="iniciaVenda()">Iniciar nova venda</button> <br>
+    <div id="divMenuProd"></div>
+    <br>
+    <div id="testeListaProd"></div> <br>
+    <div id="divNotaFiscal"></div>
+</body>
+</html>
+<script>
+    var listaCodProduto = [];
+    var listaNomeProduto = [];
+    var listaPrecoUnitProd = [];
+    var listaQtdEstoque = [];
+    var listaQtdVendida = [];
+  
+    var contadorVendasTotais = 0;
+
+function cadastraProduto(){
+/*deixando a div vazia para "resetar" após a finalização de uma venda*/
+divMenuProd.innerHTML = "";
+divMenuProd.innerHTML = `  <br>
+       Código do produto <input id="inputCodProduto"> <br>
+       Nome do produto <input id="inputNomeProduto"> <br>
+       Preço unitário <input id="inputPrecoUnit"> <br>
+       Quantidade em estoque: <input id="inputQtdEstoque"> <br>
+
+       <button onclick="salvaProduto()">Salvar produto</button> `;
+}
+function salvaProduto(){
+    //verificacao nome repetido
+    var codigoProduto = inputCodProduto.value;
+    var qtdVezes = 0;
+    for(var contador =0; contador < listaCodProduto.length;contador++){
+        if(codigoProduto == listaCodProduto[contador]){
+            qtdVezes++
+        }
+    }
+
+    if(qtdVezes == 0){
+    listaCodProduto.push(inputCodProduto.value);
+    listaNomeProduto.push(inputNomeProduto.value);
+    listaPrecoUnitProd.push(parseInt(inputPrecoUnit.value));
+    listaQtdEstoque.push(parseInt(inputQtdEstoque.value));
+
+    alert("Produto cadastrado com sucesso!");
+
+    /*testeListaProd.innerHTML = listaNomeProduto;*/
+    
+    }else{
+        alert(`Produto já cadastrado`);
+    }
+}
+
+function iniciaVenda(){
+    divMenuProd.innerHTML = "";
+    divMenuProd.innerHTML = `
+    Código do produto <input id="inputCodProduto"> <br>
+    Qtd vendida <input id="inputQtdVendida"> <br>
+    <button onclick="registraVenda()"> Registrar Venda</button> <br>
+    <button onclick="finalizaVenda()"> Finalizar Venda </button>
+    `;
+}
+
+function registraVenda(){
+    /*verificação codigo produto*/
+    var verificarCodProduto = inputCodProduto.value;
+    var qtdVezes = 0;
+    var posicao ;
+    
+    for(var contador =0; contador < listaCodProduto.length;contador++){
+        if(verificarCodProduto == listaCodProduto[contador]){
+            qtdVezes++;
+            posicao = contador;
+        }
+    }
+
+    if(qtdVezes == 0){
+        alert("Produto não encontrado");
+    }
+
+    /*verificacao estoque*/
+    var nroQtdVendida = Number(inputQtdVendida.value);
+
+    if(listaQtdEstoque[posicao] < nroQtdVendida){
+    alert("Quantidade insuficiente em estoque");
+    } else{
+        alert("Estoque");
+        listaQtdEstoque = listaQtdEstoque[posicao] - nroQtdVendida;
+        contadorVendasTotais++;
+       
+   
+    }
+
+
+}
+
+    function finalizaVenda(){
+        divMenuProd.innerHTML = "";
+        divMenuProd.innerHTML =`Total de Vendas: ${contadorVendasTotais} <br> `;
+        for(contador = 0; contador < listaNomeProduto.length; contador++ ){
+            divNotaFiscal.innerHTML += 
+            `
+            Produto ${++contador}:<br>
+            Nome do produto: ${listaNomeProduto[contador]} | Valor unitário: ${listaPrecoUnitProd[contador]} 
+            <br>
+            Quantidade comprada: ${listaQtdVendida[contador]} | Subtotal: R$${listaQtdVendida[contador]*parseInt(listaPrecoUnitProd[contador])}
+            <br> <br> <br> `;
+        }
+       
+    
+    }
+
+</script>
